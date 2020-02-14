@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonButtons, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonText } from '@ionic/react';
+import { Link } from 'react-router-dom'
 
 const Tab2: React.FC<any> = ({goHome}) => {
   return (
@@ -12,7 +13,8 @@ const Tab2: React.FC<any> = ({goHome}) => {
           <IonTitle>Tab Two</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+
+      <IonContent className="ion-padding">
         <IonList>
           <IonItem routerLink="/tabs/tab2/details">
             <IonLabel>
@@ -20,6 +22,10 @@ const Tab2: React.FC<any> = ({goHome}) => {
             </IonLabel>
           </IonItem>
         </IonList>
+
+        <IonText>
+          <Link to="/tabs/tab2/details">Link to details (WORKS)</Link>
+        </IonText>
       </IonContent>
     </IonPage>
   );

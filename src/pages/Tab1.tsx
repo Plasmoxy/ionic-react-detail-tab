@@ -22,6 +22,7 @@ import { book, build, colorFill, grid } from "ionicons/icons";
 import React from "react";
 import "./Tab1.css";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom"
 
 const Tab1: React.FC<any> = ({goHome}) => {
 
@@ -36,7 +37,11 @@ const Tab1: React.FC<any> = ({goHome}) => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+
+        
+
         <IonCard className="welcome-card">
+          <Link to="/home">to home</Link>
           <img src="/assets/shapes.svg" alt="" />
           <IonCardHeader>
             <IonCardSubtitle>Get Started</IonCardSubtitle>

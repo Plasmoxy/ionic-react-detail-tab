@@ -78,7 +78,8 @@ const TabsRoot: React.FC = () => {
   );
 };
 
-const ListPage: React.FC = (props: any) => {
+
+const HomePage: React.FC = (props: any) => {
   const history = useHistory();
   const detail = () => {
     history.push("/tabs");
@@ -94,9 +95,9 @@ const ListPage: React.FC = (props: any) => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonButton onClick={detail}>Open TABS</IonButton>
-        <Link to="/tabs">React router Link to TABS</Link>
-        <IonRouterLink href="/tabs">IonRouterLink href TABS</IonRouterLink>
+        <IonButton onClick={detail}>Open TABS</IonButton><br/>
+        <Link to="/tabs">React router Link to TABS (works same as history push)</Link><br />
+        <IonRouterLink href="/tabs">IonRouterLink href TABS (BAD PRACTICE -> reloads page)</IonRouterLink>
       </IonContent>
     </>
   );
@@ -106,7 +107,7 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
-      <Route path="/home" component={ListPage} exact={true} />
+      <Route path="/home" component={HomePage} exact={true} />
       <Route path="/tabs" component={TabsRoot} />
     </IonReactRouter>
   </IonApp>
