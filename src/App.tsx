@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, useHistory } from "react-router-dom";
+import { Redirect, Route, useHistory, Link } from "react-router-dom";
 import {
   IonApp,
   IonIcon,
@@ -14,7 +14,8 @@ import {
   IonBackButton,
   IonTitle,
   IonContent,
-  IonButton
+  IonButton,
+  IonRouterLink
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { apps, flash, send } from "ionicons/icons";
@@ -89,11 +90,13 @@ const ListPage: React.FC = (props: any) => {
           <IonButtons slot="start">
             <IonBackButton />
           </IonButtons>
-          <IonTitle>List Page</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonButton onClick={detail}>Logout</IonButton>
+        <IonButton onClick={detail}>Open TABS</IonButton>
+        <Link to="/tabs">React router Link to TABS</Link>
+        <IonRouterLink href="/tabs">IonRouterLink href TABS</IonRouterLink>
       </IonContent>
     </>
   );
